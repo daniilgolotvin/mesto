@@ -26,17 +26,17 @@
           <div class="profile__info">
             <div class="profile__line">
               <h1 id="profile-name" class="profile__line-name"></h1>
-              <button id="open-popup" class="profile__line-button">
-                <span class="sr-only">Редактировать профиль</span>
-              </button>
+              <button
+                id="open-popup"
+                class="profile__line-button"
+                aria-label=" Открытие профиля"
+              ></button>
             </div>
             <h2 id="profile-description" class="profile__info-description"></h2>
           </div>
         </div>
         <div class="profile__button">
-          <button class="profile__button-add">
-            <span class="sr-only">Добавить новую фотографию</span>
-          </button>
+          <button class="profile__button-add" aria-label="Добаваление новой фотографии"></button>
         </div>
       </section>
       <section class="elements">
@@ -48,9 +48,7 @@
           />
           <div class="element__group">
             <h2 class="element__group-title">Бегемот</h2>
-            <button class="element__group-button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
+            <button class="element__group-button" aria-label="Добавить в избранное"></button>
           </div>
         </article>
         <article class="element">
@@ -61,9 +59,7 @@
           />
           <div class="element__group">
             <h2 class="element__group-title">Озеро и гора</h2>
-            <button class="element__group-button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
+            <button class="element__group-button" aria-label="Добавить в избранное"></button>
           </div>
         </article>
         <article class="element">
@@ -74,9 +70,7 @@
           />
           <div class="element__group">
             <h2 class="element__group-title">Птицы у воды</h2>
-            <button class="element__group-button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
+            <button class="element__group-button" aria-label="Добавить в избранное"></button>
           </div>
         </article>
         <article class="element">
@@ -87,9 +81,7 @@
           />
           <div class="element__group">
             <h2 class="element__group-title">Медведь</h2>
-            <button class="element__group-button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
+            <button class="element__group-button" aria-label="Добавить в избранное"></button>
           </div>
         </article>
         <article class="element">
@@ -100,9 +92,7 @@
           />
           <div class="element__group">
             <h2 class="element__group-title">Пейзаж</h2>
-            <button class="element__group-button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
+            <button class="element__group-button" aria-label="Добавить в избранное"></button>
           </div>
         </article>
         <article class="element">
@@ -113,9 +103,7 @@
           />
           <div class="element__group">
             <h2 class="element__group-title">Тюлень кричит</h2>
-            <button class="element__group-button">
-              <span class="sr-only">Добавить в избранное</span>
-            </button>
+            <button class="element__group-button" aria-label="Добавить в избранное"></button>
           </div>
         </article>
       </section>
@@ -126,14 +114,20 @@
     <section class="popup popup-hidden" id="popup">
       <div class="popup__wrap">
         <div class="popup__window">
-          <button id="close-popup" class="popup__closeButton">
-            <span class="sr-only">Кнопка закрытия</span>
-          </button>
+          <button
+            id="close-popup"
+            class="popup__closeButton"
+            aria-label="Кнопка закрытия "
+          ></button>
           <h2 class="popup__title">Редактировать профиль</h2>
           <input id="user-name" type="text" placeholder="Имя" class="popup__name" value="" />
           <input id="user-post" type="text" placeholder="Должность" class="popup__post" value="" />
-          <button id="save-button" class="popup__saveButton" type="submit">
-            <span class="sr-only">Сохранить</span>
+          <button
+            id="save-button"
+            class="popup__saveButton"
+            type="submit"
+            aria-label="Кнопка сохранения"
+          >
             Сохранить
           </button>
         </div>
