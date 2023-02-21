@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MESTO</title>
+
+    <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body class="page hidden">
+    <header class="header">
+      <img
+        src="./images/logo.svg"
+        alt="Логотип со словами Место и Россия на английском"
+        class="header__logo"
+      />
+    </header>
+    <main class="main">
+      <section class="profile">
+        <div class="profile__content">
+          <img
+            src="./images/image.jpg"
+            alt="Большая зеленая змея на ветке, предположительно в джунглях"
+            class="profile__image"
+          />
+          <div class="profile__info">
+            <div class="profile__line">
+              <h1 id="profile-name" class="profile__line-name"></h1>
+              <button id="open-popup" class="profile__line-button">
+                <span class="sr-only">Редактировать профиль</span>
+              </button>
+            </div>
+            <h2 id="profile-description" class="profile__info-description"></h2>
+          </div>
+        </div>
+        <div class="profile__button">
+          <button class="profile__button-add">
+            <span class="sr-only">Добавить новую фотографию</span>
+          </button>
+        </div>
+      </section>
+      <section class="elements">
+        <article class="element">
+          <img
+            src="./images/ayush-kumar-9wWpwMCm9wU-unsplash.jpg"
+            alt="Индийская девушка в традиционном платье"
+            class="element__image"
+          />
+          <div class="element__group">
+            <h2 class="element__group-title">Индианка</h2>
+            <button class="element__group-button">
+              <span class="sr-only">Добавить в избранное</span>
+            </button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            src="./images/gabriel-herter-avcm1jpOLuw-unsplash.jpg"
+            alt="Гора на фоне ледяного озера"
+            class="element__image"
+          />
+          <div class="element__group">
+            <h2 class="element__group-title">Озеро и гора</h2>
+            <button class="element__group-button">
+              <span class="sr-only">Добавить в избранное</span>
+            </button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            src="./images/michael-martinelli-cnt3JwRn4eI-unsplash.jpg"
+            alt="Птицы на фоне заката"
+            class="element__image"
+          />
+          <div class="element__group">
+            <h2 class="element__group-title">Птицы у воды</h2>
+            <button class="element__group-button">
+              <span class="sr-only">Добавить в избранное</span>
+            </button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            src="./images/karl-paul-baldacchino-CdIJ9B2PzLQ-unsplash.jpg"
+            alt="Медведь около водоема, который смотрит в камеру"
+            class="element__image"
+          />
+          <div class="element__group">
+            <h2 class="element__group-title">Медведь</h2>
+            <button class="element__group-button">
+              <span class="sr-only">Добавить в избранное</span>
+            </button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            src="./images/karl-paul-baldacchino-K4eo6eJY4K4-unsplash.jpg"
+            alt="Небольшая моторная лодка плывет в сторону хвойного леса, за которым находиться огромная гора"
+            class="element__image"
+          />
+          <div class="element__group">
+            <h2 class="element__group-title">Пейзаж</h2>
+            <button class="element__group-button">
+              <span class="sr-only">Добавить в избранное</span>
+            </button>
+          </div>
+        </article>
+        <article class="element">
+          <img
+            src="./images/karl-paul-baldacchino-QL0GWsDOejQ-unsplash.jpg"
+            alt="Ревущий тюлень в компании своих сородичей, по горло в воде"
+            class="element__image"
+          />
+          <div class="element__group">
+            <h2 class="element__group-title">Тюлень кричит</h2>
+            <button class="element__group-button">
+              <span class="sr-only">Добавить в избранное</span>
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="footer">
+      <h3 class="footer__info">© 2023 Даниил Голотвин</h3>
+    </footer>
+    <section class="popup popup__hidden" id="popup">
+      <div class="popup__wrap">
+        <div class="popup__window">
+          <button id="close-popup" class="popup__closeButton">
+            <span class="sr-only">Кнопка закрытия</span>
+          </button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input id="user-name" type="text" placeholder="Имя" class="popup__name" value="" />
+          <input id="user-post" type="text" placeholder="Должность" class="popup__post" value="" />
+          <button id="save-button" class="popup__saveButton" type="submit">
+            <span class="sr-only">Сохранить</span>
+            Сохранить
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
