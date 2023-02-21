@@ -56,13 +56,13 @@ savePopupButton.addEventListener('click', handleFormSubmit);
 
 function openPopup() {
   //функция открытия
-  popup.classList.remove('popup__hidden');
+  popup.classList.remove('popup-hidden');
   page.classList.add('hidden');
 }
 
 function closePopup() {
   //функция закрытия
-  popup.classList.add('popup__hidden');
+  popup.classList.add('popup-hidden');
   page.classList.remove('hidden');
   userName.value = profileNameElement.textContent;
   userPost.value = profileDescriptionElement.textContent;
