@@ -25,7 +25,7 @@
           <img src="./images/image.jpg" alt="Путешественник" class="profile__image" />
           <div class="profile__info">
             <div class="profile__line">
-              <h1 id="profile-name" class="profile__line-name"></h1>
+              <h1 id="profile-name" class="profile__line-name">Жак-Ив Кусто</h1>
               <button
                 id="open-popup"
                 class="profile__line-button"
@@ -33,24 +33,19 @@
                 type="button"
               ></button>
             </div>
-            <h2 id="profile-description" class="profile__info-description"></h2>
+            <p id="profile-description" class="profile__info-description">Исследователь океана</p>
           </div>
         </div>
-        <div class="profile__button">
-          <button
-            class="profile__button-add"
-            aria-label="Добаваление новой фотографии"
-            type="button"
-          ></button>
-        </div>
+
+        <button
+          class="profile__add-button"
+          aria-label="Добаваление новой фотографии"
+          type="button"
+        ></button>
       </section>
       <section class="elements">
         <article class="element">
-          <img
-            src="./images/nosorog-maiak-priroda (1) 2.jpg"
-            alt="Носорог ест траву"
-            class="element__image"
-          />
+          <img src="./images/nosorog.jpg" alt="Носорог ест траву" class="element__image" />
           <div class="element__group">
             <h2 class="element__group-title">Бегемот</h2>
             <button
@@ -138,30 +133,25 @@
       </section>
     </main>
     <footer class="footer">
-      <h3 class="footer__info">© 2023 Даниил Голотвин</h3>
+      <p class="footer__info">© 2023 Даниил Голотвин</p>
     </footer>
-    <section class="popup popup-hidden" id="popup">
+    <div class="popup popup_open" id="popup">
       <div class="popup__wrap">
-        <div class="popup__window">
-          <button
-            id="close-popup"
-            class="popup__closeButton"
-            aria-label="Кнопка закрытия "
-            type="button"
-          ></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
+        <button
+          id="close-popup"
+          class="popup__close-button"
+          aria-label="Кнопка закрытия "
+          type="button"
+        ></button>
+        <form action="" class="popup__window" method="post" name="popup-info">
+          <legend class="popup__title">Редактировать профиль</legend>
           <input id="user-name" type="text" placeholder="Имя" class="popup__name" value="" />
-          <input id="user-post" type="text" placeholder="Должность" class="popup__post" value="" />
-          <button
-            id="save-button"
-            class="popup__saveButton"
-            type="submit"
-            aria-label="Кнопка сохранения"
-          >
+          <input id="user-post" type="text" placeholder="Должность" class="popup__name" value="" />
+          <button class="popup__save-button" type="submit" aria-label="Кнопка сохранения">
             Сохранить
           </button>
-        </div>
+        </form>
       </div>
-    </section>
+    </div>
   </body>
 </html>
