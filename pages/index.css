@@ -5,7 +5,7 @@
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/main/main.css);
 @import url(../blocks/profile/profile.css);
-@import url(../blocks/profile/__button-add/profile__button-add.css);
+@import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__content/profile__content.css);
 @import url(../blocks/profile/__image/profile__image.css);
 @import url(../blocks/profile/__info-description/profile__info-description.css);
