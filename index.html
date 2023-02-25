@@ -9,7 +9,7 @@
     />
     <title>MESTO</title>
     <link rel="stylesheet" href="./pages/index.css" />
-    <script src="./script.js" defer></script>
+    <script src="./index.js" defer></script>
   </head>
   <body class="page hidden">
     <header class="header">
@@ -135,16 +135,16 @@
     <footer class="footer">
       <p class="footer__info">© 2023 Даниил Голотвин</p>
     </footer>
-    <div class="popup popup_open" id="popup">
+    <div class="popup" id="popup">
       <div class="popup__wrap">
-        <button
-          id="close-popup"
-          class="popup__close-button"
-          aria-label="Кнопка закрытия "
-          type="button"
-        ></button>
-        <form action="" class="popup__window" method="post" name="popup-info">
-          <legend class="popup__title">Редактировать профиль</legend>
+        <form action="#" class="popup__window" method="post" name="popup-info">
+          <button
+            id="close-popup"
+            class="popup__close-button"
+            aria-label="Кнопка закрытия "
+            type="button"
+          ></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
           <input id="user-name" type="text" placeholder="Имя" class="popup__name" value="" />
           <input id="user-post" type="text" placeholder="Должность" class="popup__name" value="" />
           <button class="popup__save-button" type="submit" aria-label="Кнопка сохранения">

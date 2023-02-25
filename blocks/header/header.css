@@ -1,6 +1,5 @@
 .header {
   max-width: 880px;
-
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   margin: auto;
   margin-top: 45px;
@@ -8,7 +7,6 @@
 
 @media (max-width: 640px) {
   .header {
-    min-height: 56px;
     margin-top: 28px;
   }
 }

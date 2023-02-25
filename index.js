@@ -14,7 +14,7 @@ let userName = document.querySelector('#user-name'); // первое поле в
 
 let userPost = document.querySelector('#user-post'); //второе поля ввода
 
-popup.classList.remove('popup_open');
+let popupWindow = document.querySelector('.popup__window');
 
 function openPopup() {
   //функция открытия
@@ -42,4 +42,4 @@ function handleFormSubmit(evt) {
   closePopup();
 }
 
-popup.addEventListener('submit', handleFormSubmit);
+popupWindow.addEventListener('submit', handleFormSubmit);
