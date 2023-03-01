@@ -7,10 +7,12 @@
   align-self: center;
   max-width: 430px;
   margin: 0 auto;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
 }
 @media screen and (max-width: 540px) {
   .popup__wrap {
-    top: 127px;
     max-width: 282px;
   }
 }

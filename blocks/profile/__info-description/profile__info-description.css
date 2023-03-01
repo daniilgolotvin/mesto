@@ -9,10 +9,11 @@
   white-space: nowrap;
   overflow: hidden;
 }
-@media (max-width: 697px) {
+@media (max-width: 710px) {
   .profile__info-description {
     text-align: center;
     font-size: 14px;
     line-height: 17px;
+    max-width: 250px;
   }
 }

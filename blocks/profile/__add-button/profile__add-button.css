@@ -10,7 +10,7 @@
   cursor: pointer;
   align-self: center;
 }
-@media (max-width: 697px) {
+@media (max-width: 710px) {
   .profile__add-button {
     width: 282px;
     background-color: #000;
