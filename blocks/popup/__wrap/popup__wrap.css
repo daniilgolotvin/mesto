@@ -2,18 +2,14 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: #000;
-  align-self: center;
   max-width: 430px;
   margin: 0 auto;
   position: relative;
-  max-width: 430px;
-  top: 22.9vh;
+  height: 100vh;
 }
 @media screen and (max-width: 540px) {
   .popup__wrap {
-    top: 33.8vh;
     max-width: 282px;
   }
 }
