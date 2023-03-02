@@ -4,12 +4,13 @@
   flex-direction: column;
   color: #000;
   max-width: 430px;
-  margin: 0 auto;
+  margin: auto;
   position: relative;
-  height: 100vh;
+  top: 19.42%;
 }
 @media screen and (max-width: 540px) {
   .popup__wrap {
+    top: 12.25%;
     max-width: 282px;
   }
 }

@@ -9,7 +9,7 @@
   cursor: pointer;
   border: none;
   position: absolute;
-  top: 195px;
+  top: -40px;
   right: -40px;
 }
 @media screen and (max-width: 540px) {
@@ -17,7 +17,6 @@
     width: 20px;
     height: 20px;
     margin: 0 0 16px;
-    top: 210px;
     right: 0;
   }
 }
