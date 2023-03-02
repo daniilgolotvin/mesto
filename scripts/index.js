@@ -16,16 +16,18 @@ let userPost = document.querySelector('#user-post'); //второе поля в�
 
 let popupWindow = document.querySelector('.popup__window');
 
+popup.classList.add('popup_open');
+
 function openPopup() {
   //функция открытия
-  popup.classList.add('popup_open');
+  popup.classList.remove('popup_open');
   userName.value = profileNameElement.textContent;
   userPost.value = profileDescriptionElement.textContent;
 }
 
 function closePopup() {
   //функция закрытия
-  popup.classList.remove('popup_open');
+  popup.classList.add('popup_open');
 }
 
 openPopupButton.addEventListener('click', openPopup);

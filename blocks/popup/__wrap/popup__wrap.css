@@ -6,11 +6,9 @@
   max-width: 430px;
   margin: auto;
   position: relative;
-  top: 19.42%;
 }
 @media screen and (max-width: 540px) {
   .popup__wrap {
-    top: 12.25%;
     max-width: 282px;
   }
 }
