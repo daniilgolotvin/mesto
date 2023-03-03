@@ -42,4 +42,4 @@ function handleFormSubmit(evt) {
   closePopup();
 }
 
-popupWindow.addEventListener('submit', handleFormSubmit);
+popupWindow.addEventListener('submit', handleFormSubmit); //слушатель событий для отправки формы
