@@ -10,6 +10,7 @@
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
     <title>MESTO</title>
     <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./scripts/array.js" defer></script>
     <script src="./scripts/index.js" defer></script>
   </head>
   <body class="page hidden">
@@ -37,106 +38,33 @@
             <p id="profile-description" class="profile__info-description">Исследователь океана</p>
           </div>
         </div>
-
         <button
           class="profile__add-button"
           aria-label="Добаваление новой фотографии"
           type="button"
+          id="button-add"
         ></button>
       </section>
       <section class="elements">
-        <article class="element">
-          <img src="./images/nosorog.jpg" alt="Носорог ест траву" class="element__image" />
-          <div class="element__group">
-            <h2 class="element__group-title">Бегемот</h2>
-            <button
-              class="element__group-button"
-              type="button"
-              aria-label="Добавить в избранное"
-            ></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            src="./images/gabriel-herter-avcm1jpOLuw-unsplash.jpg"
-            alt="Гора на фоне ледяного озера"
-            class="element__image"
-          />
-          <div class="element__group">
-            <h2 class="element__group-title">Озеро и гора</h2>
-            <button
-              class="element__group-button"
-              type="button"
-              aria-label="Добавить в избранное"
-            ></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            src="./images/michael-martinelli-cnt3JwRn4eI-unsplash.jpg"
-            alt="Птицы на фоне заката"
-            class="element__image"
-          />
-          <div class="element__group">
-            <h2 class="element__group-title">Птицы у воды</h2>
-            <button
-              class="element__group-button"
-              type="button"
-              aria-label="Добавить в избранное"
-            ></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            src="./images/karl-paul-baldacchino-CdIJ9B2PzLQ-unsplash.jpg"
-            alt="Медведь около водоема, который смотрит в камеру"
-            class="element__image"
-          />
-          <div class="element__group">
-            <h2 class="element__group-title">Медведь</h2>
-            <button
-              class="element__group-button"
-              type="button"
-              aria-label="Добавить в избранное"
-            ></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            src="./images/karl-paul-baldacchino-K4eo6eJY4K4-unsplash.jpg"
-            alt="Небольшая моторная лодка плывет в сторону хвойного леса, за которым находиться огромная гора"
-            class="element__image"
-          />
-          <div class="element__group">
-            <h2 class="element__group-title">Пейзаж</h2>
-            <button
-              class="element__group-button"
-              type="button"
-              aria-label="Добавить в избранное"
-            ></button>
-          </div>
-        </article>
-        <article class="element">
-          <img
-            src="./images/karl-paul-baldacchino-QL0GWsDOejQ-unsplash.jpg"
-            alt="Ревущий тюлень в компании своих сородичей, по горло в воде"
-            class="element__image"
-          />
-          <div class="element__group">
-            <h2 class="element__group-title">Тюлень кричит</h2>
-            <button
-              class="element__group-button"
-              type="button"
-              aria-label="Добавить в избранное"
-            ></button>
-          </div>
-        </article>
+        <template class="element__template">
+          <article class="element">
+            <img src="" alt="" class="element__image" />
+            <div class="element__group">
+              <h2 class="element__group-title"></h2>
+              <button
+                class="element__group-button"
+                type="button"
+                aria-label="Добавить в избранное"
+              ></button>
+            </div>
+          </article>
+        </template>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__info">© 2023 Даниил Голотвин</p>
     </footer>
-    <div class="popup" id="popup">
+    <div class="popup profile-popup" id="popup">
       <div class="popup__wrap">
         <button
           id="close-popup"
@@ -149,6 +77,34 @@
           <input id="user-name" type="text" placeholder="Имя" class="popup__name" value="" />
           <input id="user-post" type="text" placeholder="Должность" class="popup__name" value="" />
           <button class="popup__save-button" type="submit" aria-label="Кнопка сохранения">
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="popup add-popup">
+      <div class="popup__wrap">
+        <button
+          id="close-addPopup"
+          class="popup__close-button"
+          aria-label="Кнопка закрытия "
+          type="button"
+        ></button>
+        <form action="#" class="popup__window" method="post" name="popup__add-info">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" placeholder="Название" class="popup__name add-name" value="" />
+          <input
+            type="text"
+            placeholder="Ссылка на картинку"
+            class="popup__name add-link"
+            value=""
+          />
+          <button
+            id="add-save"
+            class="popup__save-button"
+            aria-label="Кнопка сохранения"
+            type="submit"
+          >
             Сохранить
           </button>
         </form>
