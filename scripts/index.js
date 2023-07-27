@@ -1,7 +1,5 @@
 const page = document.querySelector(".page");
 
-const popup = document.querySelector("#popup");
-
 const profilePopup = document.querySelector(".profile-popup");
 
 const addPopup = document.querySelector(".add-popup");
@@ -13,12 +11,6 @@ const addLink = addPopup.querySelector(".add-link");
 const editButton = document.querySelector("#open-popup");
 
 const closeProfileButton = document.querySelector("#close-popup");
-
-const closeAddButton = document.querySelector("#close-addPopup");
-
-const closePopupImage = document.querySelector("#close-popupImage");
-
-const saveAddButton = document.querySelector("#add-save");
 
 const addButton = document.querySelector("#button-add");
 
@@ -32,7 +24,7 @@ const userName = document.querySelector("#user-name"); // первое поле 
 
 const userPost = document.querySelector("#user-post"); //второе поля ввода
 
-const popupWindow = document.querySelector(".popup__window");
+const popupForm = document.querySelector(".popup__form");
 
 const templateElement = document.querySelector(".elements__template").content;
 
@@ -43,9 +35,6 @@ const popupImage = document.querySelector(".popup-image");
 const popupImageTitle = popupImage.querySelector(".popup__container-title");
 
 const popupImageImg = popupImage.querySelector(".popup__container-image");
-
-userName.value = profileNameElement.textContent;
-userPost.value = profileDescriptionElement.textContent;
 
 function openPopup(popup) {
   //функция открытия
@@ -63,6 +52,8 @@ function openPopupAdd() {
 
 editButton.addEventListener("click", function () {
   openPopup(profilePopup);
+  userName.value = profileNameElement.textContent;
+  userPost.value = profileDescriptionElement.textContent;
 });
 
 addButton.addEventListener("click", function () {
@@ -93,7 +84,7 @@ function handleFormSubmit(evt) {
   closePopup(profilePopup);
 }
 
-popupWindow.addEventListener("submit", handleFormSubmit); //слушатель событий для отправки формы
+popupForm.addEventListener("submit", handleFormSubmit); //слушатель событий для отправки формы
 
 //создание карточек
 function createPlace(element) {
@@ -127,20 +118,20 @@ function createPlace(element) {
   return templateElementCopy;
 }
 
-function addPopupInitial(item) {
+function addCard(item) {
   const element = createPlace(item);
   templateElements.prepend(element);
 }
 
-initialCards.forEach(addPopupInitial);
+initialCards.forEach(addCard);
 
 function createCard(evt) {
   evt.preventDefault();
-  const arrayCard = {
+  const newCard = {
     name: addName.value,
     link: addLink.value,
   };
-  addPopupInitial(arrayCard);
+  addCard(newCard);
   evt.target.reset();
   closePopup(addPopup);
 }

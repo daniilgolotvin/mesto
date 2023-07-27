@@ -5,8 +5,12 @@
   height: 100%;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
   opacity: 0;
   transition: visibility 0.3s, opacity 0.5s linear;
+}
+
+.popup-opacity {
+  background-color: rgba(0, 0, 0, 0.9);
 }

@@ -85,21 +85,21 @@
           aria-label="Кнопка закрытия "
           type="button"
         ></button>
-        <form action="#" class="popup__window" name="popup-info">
+        <form action="#" class="popup__form" name="popup-info">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input
             id="user-name"
             type="text"
             placeholder="Имя"
             class="popup__name"
-            value=""
+            required
           />
           <input
             id="user-post"
             type="text"
             placeholder="Должность"
             class="popup__name"
-            value=""
+            required
           />
           <button
             class="popup__save-button"
@@ -125,13 +125,13 @@
             type="text"
             placeholder="Название"
             class="popup__name add-name"
-            value=""
+            required
           />
           <input
-            type="text"
+            type="url"
             placeholder="Ссылка на картинку"
             class="popup__name add-link"
-            value=""
+            required
           />
           <button
             id="add-save"
@@ -144,7 +144,7 @@
         </form>
       </div>
     </div>
-    <section class="popup popup-image">
+    <section class="popup popup-image popup-opacity">
       <div class="popup__wrap">
         <button
           id="close-popupImage"
