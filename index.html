@@ -48,7 +48,14 @@
       <section class="elements">
         <template class="element__template">
           <article class="element">
-            <img src="" alt="" class="element__image" />
+            <div class="element__card">
+              <img src="" alt="" class="element__card-image" />
+              <button
+                class="element__card-trashbutton"
+                type="button"
+                aria-label="Удалить карточку"
+              ></button>
+            </div>
             <div class="element__group">
               <h2 class="element__group-title"></h2>
               <button
@@ -72,7 +79,7 @@
           aria-label="Кнопка закрытия "
           type="button"
         ></button>
-        <form action="#" class="popup__window" method="post" name="popup-info">
+        <form action="#" class="popup__window" name="popup-info">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input id="user-name" type="text" placeholder="Имя" class="popup__name" value="" />
           <input id="user-post" type="text" placeholder="Должность" class="popup__name" value="" />
@@ -90,7 +97,7 @@
           aria-label="Кнопка закрытия "
           type="button"
         ></button>
-        <form action="#" class="popup__window" method="post" name="popup__add-info">
+        <form action="#" class="popup__window" name="popup__add-info">
           <h2 class="popup__title">Новое место</h2>
           <input type="text" placeholder="Название" class="popup__name add-name" value="" />
           <input
@@ -110,5 +117,23 @@
         </form>
       </div>
     </div>
+    <section class="popup popup-image">
+      <div class="popup__wrap">
+        <button
+          id="close-popupImage"
+          class="popup__close-button"
+          aria-label="Кнопка закрытия"
+          type="button"
+        ></button>
+        <div class="popup__container">
+          <img
+            src="/images/gabriel-herter-avcm1jpOLuw-unsplash.jpg"
+            class="popup__container_image"
+            alt=""
+          />
+          <h3 class="popup__container_title" aria-label="Заголовок фотографии">dfgfgdfg</h3>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

@@ -7,6 +7,7 @@
   border: 0;
   align-self: center;
   margin-left: 18px;
+  transition: 0.5s ease;
 }
 
 @media (max-width: 710px) {
