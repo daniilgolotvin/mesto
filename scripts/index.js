@@ -1,83 +1,85 @@
-const page = document.querySelector('.page');
+const page = document.querySelector(".page");
 
-const popup = document.querySelector('#popup');
+const popup = document.querySelector("#popup");
 
-const profilePopup = document.querySelector('.profile-popup');
+const profilePopup = document.querySelector(".profile-popup");
 
-const addPopup = document.querySelector('.add-popup');
+const addPopup = document.querySelector(".add-popup");
 
-const addName = addPopup.querySelector('.add-name');
+const addName = addPopup.querySelector(".add-name");
 
-const addLink = addPopup.querySelector('.add-link');
+const addLink = addPopup.querySelector(".add-link");
 
-const editButton = document.querySelector('#open-popup');
+const editButton = document.querySelector("#open-popup");
 
-const closeProfileButton = document.querySelector('#close-popup');
+const closeProfileButton = document.querySelector("#close-popup");
 
-const closeAddButton = document.querySelector('#close-addPopup');
+const closeAddButton = document.querySelector("#close-addPopup");
 
-const closePopupImage = document.querySelector('#close-popupImage');
+const closePopupImage = document.querySelector("#close-popupImage");
 
-const saveAddButton = document.querySelector('#add-save');
+const saveAddButton = document.querySelector("#add-save");
 
-const addButton = document.querySelector('#button-add');
+const addButton = document.querySelector("#button-add");
 
-const profileNameElement = document.querySelector('#profile-name'); //выводим это все на страницу
+const profileNameElement = document.querySelector("#profile-name"); //выводим это все на страницу
 
-const profileDescriptionElement = document.querySelector('#profile-description');
+const profileDescriptionElement = document.querySelector(
+  "#profile-description"
+);
 
-const userName = document.querySelector('#user-name'); // первое поле ввода
+const userName = document.querySelector("#user-name"); // первое поле ввода
 
-const userPost = document.querySelector('#user-post'); //второе поля ввода
+const userPost = document.querySelector("#user-post"); //второе поля ввода
 
-const popupWindow = document.querySelector('.popup__window');
+const popupWindow = document.querySelector(".popup__window");
 
-const templateElement = document.querySelector('.element__template').content;
+const templateElement = document.querySelector(".elements__template").content;
 
-const templateElements = document.querySelector('.elements');
+const templateElements = document.querySelector(".elements");
 
-const popupImage = document.querySelector('.popup-image');
+const popupImage = document.querySelector(".popup-image");
 
-const popupImageTitle = popupImage.querySelector('.popup__container_title');
+const popupImageTitle = popupImage.querySelector(".popup__container-title");
 
-const popupImageImg = popupImage.querySelector('.popup__container_image');
+const popupImageImg = popupImage.querySelector(".popup__container-image");
 
 userName.value = profileNameElement.textContent;
 userPost.value = profileDescriptionElement.textContent;
 
 function openPopup(popup) {
   //функция открытия
-  popup.classList.add('popup_open');
+  popup.classList.add("popup_open");
 }
 
 function closePopup(popup) {
   //функция закрытия
-  popup.classList.remove('popup_open');
+  popup.classList.remove("popup_open");
 }
 
 function openPopupAdd() {
-  popup.classList.add('popup_add');
+  popup.classList.add("popup_add");
 }
 
-editButton.addEventListener('click', function () {
+editButton.addEventListener("click", function () {
   openPopup(profilePopup);
 });
 
-addButton.addEventListener('click', function () {
+addButton.addEventListener("click", function () {
   openPopup(addPopup);
 });
 
 function likeButtonActive(evt) {
-  evt.target.classList.toggle('element__group-button-active');
+  evt.target.classList.toggle("element__group-button-active");
 }
 
-document.querySelectorAll('.popup__close-button').forEach(button => {
-  const buttonsPopup = button.closest('.popup');
-  button.addEventListener('click', () => closePopup(buttonsPopup));
+document.querySelectorAll(".popup__close-button").forEach((button) => {
+  const buttonsPopup = button.closest(".popup");
+  button.addEventListener("click", () => closePopup(buttonsPopup));
 });
 
 function deleteCard(evt) {
-  const cardElement = evt.target.closest('.element');
+  const cardElement = evt.target.closest(".element");
   if (cardElement) {
     cardElement.remove();
   }
@@ -91,26 +93,34 @@ function handleFormSubmit(evt) {
   closePopup(profilePopup);
 }
 
-popupWindow.addEventListener('submit', handleFormSubmit); //слушатель событий для отправки формы
+popupWindow.addEventListener("submit", handleFormSubmit); //слушатель событий для отправки формы
 
 //создание карточек
 function createPlace(element) {
   const templateElementCopy = templateElement.cloneNode(true);
-  const templateImage = templateElementCopy.querySelector('.element__card-image');
-  const templateTitle = templateElementCopy.querySelector('.element__group-title');
-  const likeButton = templateElementCopy.querySelector('.element__group-button');
-  const trashButton = templateElementCopy.querySelector('.element__card-trashbutton');
-  templateImage.setAttribute('src', element.link);
-  templateImage.setAttribute('alt', element.name);
+  const templateImage = templateElementCopy.querySelector(
+    ".element__card-image"
+  );
+  const templateTitle = templateElementCopy.querySelector(
+    ".element__group-title"
+  );
+  const likeButton = templateElementCopy.querySelector(
+    ".element__group-button"
+  );
+  const trashButton = templateElementCopy.querySelector(
+    ".element__card-trashbutton"
+  );
+  templateImage.setAttribute("src", element.link);
+  templateImage.setAttribute("alt", element.name);
   templateTitle.textContent = element.name;
 
-  likeButton.addEventListener('click', likeButtonActive);
-  trashButton.addEventListener('click', deleteCard); // Добавляем обработчик для кнопки удаления
+  likeButton.addEventListener("click", likeButtonActive);
+  trashButton.addEventListener("click", deleteCard); // Добавляем обработчик для кнопки удаления
 
-  templateImage.addEventListener('click', event => {
+  templateImage.addEventListener("click", (event) => {
     openPopup(popupImage);
-    popupImageImg.src = event.target.getAttribute('src');
-    popupImageImg.alt = event.target.getAttribute('alt');
+    popupImageImg.src = event.target.getAttribute("src");
+    popupImageImg.alt = event.target.getAttribute("alt");
     popupImageTitle.textContent = popupImageImg.alt;
   });
 
@@ -128,11 +138,11 @@ function createCard(evt) {
   evt.preventDefault();
   const arrayCard = {
     name: addName.value,
-    link: addLink.value
+    link: addLink.value,
   };
   addPopupInitial(arrayCard);
   evt.target.reset();
   closePopup(addPopup);
 }
 
-addPopup.addEventListener('submit', createCard);
+addPopup.addEventListener("submit", createCard);
