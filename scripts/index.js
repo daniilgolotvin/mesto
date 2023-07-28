@@ -16,11 +16,11 @@ const addButton = document.querySelector("#button-add");
 
 const profileNameElement = document.querySelector("#profile-name"); //выводим это все на страницу
 
+const userName = document.querySelector("#user-name"); // первое поле ввода
+
 const profileDescriptionElement = document.querySelector(
   "#profile-description"
 );
-
-const userName = document.querySelector("#user-name"); // первое поле ввода
 
 const userPost = document.querySelector("#user-post"); //второе поля ввода
 
