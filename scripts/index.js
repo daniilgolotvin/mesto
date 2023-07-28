@@ -24,7 +24,7 @@ const userName = document.querySelector("#user-name"); // первое поле 
 
 const userPost = document.querySelector("#user-post"); //второе поля ввода
 
-const popupForm = document.querySelector(".popup__form");
+const profilePopupForm = profilePopup.querySelector(".popup__form");
 
 const templateElement = document.querySelector(".elements__template").content;
 
