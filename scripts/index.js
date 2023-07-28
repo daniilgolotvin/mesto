@@ -84,7 +84,7 @@ function handleFormSubmit(evt) {
   closePopup(profilePopup);
 }
 
-popupForm.addEventListener("submit", handleFormSubmit); //слушатель событий для отправки формы
+profilePopupForm.addEventListener("submit", handleFormSubmit); //слушатель событий для отправки формы
 
 //создание карточек
 function createPlace(element) {
