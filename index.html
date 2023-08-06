@@ -87,27 +87,41 @@
         ></button>
         <form action="#" class="popup__form" name="popup-info">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input
-            id="user-name"
-            type="text"
-            placeholder="Имя"
-            class="popup__name"
-            required
-          />
-          <input
-            id="user-post"
-            type="text"
-            placeholder="Должность"
-            class="popup__name"
-            required
-          />
-          <button
-            class="popup__save-button"
-            type="submit"
-            aria-label="Кнопка сохранения"
-          >
-            Сохранить
-          </button>
+          <fieldset class="popup__fieldset">
+            <input
+              class="popup__name"
+              id="user-name"
+              type="text"
+              name="name"
+              placeholder="Имя"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span class="popup__input-error popup__input-error_type_user-name"
+              >hi</span
+            >
+            <input
+              class="popup__name"
+              id="user-post"
+              type="text"
+              name="about"
+              placeholder="Чем занимаешься?"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span
+              class="popup__input-error popup__input-error_type_user-post"
+            ></span>
+            <button
+              class="popup__save-button"
+              type="submit"
+              aria-label="Кнопка сохранения"
+            >
+              Сохранить
+            </button>
+          </fieldset>
         </form>
       </div>
     </div>
@@ -121,26 +135,41 @@
         ></button>
         <form action="#" class="popup__form" name="popup__add-info">
           <h2 class="popup__title">Новое место</h2>
-          <input
-            type="text"
-            placeholder="Название"
-            class="popup__name add-name"
-            required
-          />
-          <input
-            type="url"
-            placeholder="Ссылка на картинку"
-            class="popup__name add-link"
-            required
-          />
-          <button
-            id="add-save"
-            class="popup__save-button"
-            aria-label="Кнопка сохранения"
-            type="submit"
-          >
-            Сохранить
-          </button>
+          <fieldset class="popup__fieldset">
+            <input
+              class="popup__name add-name"
+              type="text"
+              name="title"
+              id="inputNameСard"
+              placeholder="Название"
+              minlength="2"
+              maxlength="30"
+              required
+            />
+            <span
+              class="popup__input-error popup__input-error_type_inputNameСard"
+            ></span>
+            <input
+              class="popup__name add-link"
+              type="url"
+              pattern="https://.*"
+              name="link"
+              id="inputLinkСard"
+              placeholder="Ссылка на картинку"
+              required
+            />
+            <span
+              class="popup__input-error popup__input-error_type_inputLinkСard"
+            ></span>
+            <button
+              id="add-save"
+              class="popup__save-button popup__save-button_inactive"
+              aria-label="Кнопка сохранения"
+              type="submit"
+            >
+              Летс гоу!
+            </button>
+          </fieldset>
         </form>
       </div>
     </div>
@@ -161,4 +190,5 @@
       </div>
     </section>
   </body>
+  <script src="./scripts/validation.js"></script>
 </html>

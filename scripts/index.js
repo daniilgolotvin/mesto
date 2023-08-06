@@ -37,15 +37,32 @@ const popupImageTitle = popupImage.querySelector(".popup__container-title");
 const popupImageImg = popupImage.querySelector(".popup__container-image");
 
 function openPopup(popup) {
-  //функция открытия
   popup.classList.add("popup_open");
+  document.addEventListener("keydown", handleEscPress);
 }
 
+// Функция для закрытия попапа
 function closePopup(popup) {
-  //функция закрытия
   popup.classList.remove("popup_open");
+  document.removeEventListener("keydown", handleEscPress);
 }
 
+function handleEscPress(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_open");
+    if (openedPopup) {
+      closePopup(openedPopup);
+    }
+  }
+}
+
+document.querySelectorAll(".popup").forEach((popup) => {
+  popup.addEventListener("click", (evt) => {
+    if (evt.target === popup) {
+      closePopup(popup);
+    }
+  });
+});
 function openPopupAdd() {
   popup.classList.add("popup_add");
 }

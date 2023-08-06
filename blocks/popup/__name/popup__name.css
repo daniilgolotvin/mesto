@@ -7,7 +7,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-  margin-bottom: 30px;
 }
 
 .popup__name:last-child {
@@ -15,7 +14,6 @@
 }
 
 .popup__name:focus {
-  outline: 2px solid #2f80ed;
   border-radius: 10px;
 }
 
