@@ -27,13 +27,13 @@ const checkInputValidity = (formElement, inputElement, config) => {
   }
 };
 
-// Функция для добавления обработчиков событий для валидации формы
 const setEventListeners = (formElement, config) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)
   );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
-  console.log(buttonElement);
+
+  // При открытии попапа формы редактирования профиля проверяем наличие невалидных полей
   toggleButtonState(inputList, buttonElement, config.inactiveButtonClass);
 
   // Добавляем обработчик события "reset" для формы

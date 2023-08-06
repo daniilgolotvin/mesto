@@ -49,7 +49,7 @@ function likeButtonActive(evt) {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileNameElement.textContent = userName.value;
-  profileDescriptionElement.textContent = userPost.value;
+  profileDescriptionElement.textContent = userPost.value.trim();
   closePopup(profilePopup);
 }
 
@@ -98,7 +98,7 @@ function createPlace(element) {
 function createAndAddCard(evt) {
   evt.preventDefault();
   const newCard = {
-    name: addName.value,
+    name: addName.value.trim(),
     link: addLink.value,
   };
   addCard(newCard);
@@ -125,7 +125,7 @@ document.querySelectorAll(".popup").forEach((popup) => {
 editButton.addEventListener("click", function () {
   openPopup(profilePopup);
   userName.value = profileNameElement.textContent;
-  userPost.value = profileDescriptionElement.textContent;
+  userPost.value = profileDescriptionElement.textContent.trim();
 });
 
 // Обработчик события клика на кнопку 'Добавить' (открывает попап для добавления карточки)
