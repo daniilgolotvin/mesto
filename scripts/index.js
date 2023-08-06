@@ -1,11 +1,9 @@
 // Объявление переменных для работы с элементами страницы
-const page = document.querySelector(".page");
 const profilePopup = document.querySelector(".profile-popup");
 const addPopup = document.querySelector(".add-popup");
 const addName = addPopup.querySelector(".add-name");
 const addLink = addPopup.querySelector(".add-link");
 const editButton = document.querySelector("#open-popup");
-const closeProfileButton = document.querySelector("#close-popup");
 const addButton = document.querySelector("#button-add");
 const profileNameElement = document.querySelector("#profile-name");
 const userName = document.querySelector("#user-name");
@@ -42,42 +40,18 @@ function handleEscPress(evt) {
   }
 }
 
-// Добавляем обработчик для закрытия попапа при клике на overlay
-document.querySelectorAll(".popup").forEach((popup) => {
-  popup.addEventListener("click", (evt) => {
-    if (evt.target === popup) {
-      closePopup(popup);
-    }
-  });
-});
-
-// Функция для открытия попапа добавления новой карточки (не используется в коде)
-function openPopupAdd() {
-  popup.classList.add("popup_add");
-}
-
-// Обработчик события клика на кнопку "Редактировать профиль"
-editButton.addEventListener("click", function () {
-  openPopup(profilePopup);
-  userName.value = profileNameElement.textContent;
-  userPost.value = profileDescriptionElement.textContent;
-});
-
-// Обработчик события клика на кнопку "Добавить" (открывает попап для добавления карточки)
-addButton.addEventListener("click", function () {
-  openPopup(addPopup);
-});
-
-// Функция для активации/деактивации кнопки "Лайк" на карточке
+// Функция для активации/деактивации кнопки 'Лайк' на карточке
 function likeButtonActive(evt) {
   evt.target.classList.toggle("element__group-button-active");
 }
 
-// Добавляем обработчики событий для кнопок закрытия внутри попапов
-document.querySelectorAll(".popup__close-button").forEach((button) => {
-  const buttonsPopup = button.closest(".popup");
-  button.addEventListener("click", () => closePopup(buttonsPopup));
-});
+// Обработчик события отправки формы редактирования профиля
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+  profileNameElement.textContent = userName.value;
+  profileDescriptionElement.textContent = userPost.value;
+  closePopup(profilePopup);
+}
 
 // Функция для удаления карточки
 function deleteCard(evt) {
@@ -87,18 +61,6 @@ function deleteCard(evt) {
   }
 }
 
-// Обработчик события отправки формы редактирования профиля
-function handleFormSubmit(evt) {
-  evt.preventDefault();
-  profileNameElement.textContent = userName.value;
-  profileDescriptionElement.textContent = userPost.value;
-  closePopup(profilePopup);
-}
-
-// Добавляем обработчик события отправки формы редактирования профиля
-profilePopupForm.addEventListener("submit", handleFormSubmit);
-
-// Функция для создания карточки из шаблона
 function createPlace(element) {
   const templateElementCopy = templateElement.cloneNode(true);
   const templateImage = templateElementCopy.querySelector(
@@ -117,31 +79,23 @@ function createPlace(element) {
   templateImage.setAttribute("alt", element.name);
   templateTitle.textContent = element.name;
 
-  // Добавляем обработчики событий для кнопок "Лайк" и "Удалить"
+  // Добавляем обработчики событий для кнопок 'Лайк' и 'Удалить'
   likeButton.addEventListener("click", likeButtonActive);
   trashButton.addEventListener("click", deleteCard);
 
   // Добавляем обработчик события клика на изображение карточки
-  templateImage.addEventListener("click", (event) => {
+  templateImage.addEventListener("click", (evt) => {
     openPopup(popupImage);
-    popupImageImg.src = event.target.getAttribute("src");
-    popupImageImg.alt = event.target.getAttribute("alt");
+    popupImageImg.src = evt.target.getAttribute("src");
+    popupImageImg.alt = evt.target.getAttribute("alt");
     popupImageTitle.textContent = popupImageImg.alt;
   });
 
   return templateElementCopy;
 }
 
-// Функция для добавления карточки на страницу
-function addCard(item) {
-  const element = createPlace(item);
-  templateElements.prepend(element);
-}
-
-initialCards.forEach(addCard);
-
 // Функция для создания новой карточки и добавления её на страницу
-function createCard(evt) {
+function createAndAddCard(evt) {
   evt.preventDefault();
   const newCard = {
     name: addName.value,
@@ -152,5 +106,45 @@ function createCard(evt) {
   closePopup(addPopup);
 }
 
+// Функция для добавления карточки на страницу
+function addCard(item) {
+  const element = createPlace(item);
+  templateElements.prepend(element);
+}
+
+// Добавляем обработчик для закрытия попапа при клике на overlay
+document.querySelectorAll(".popup").forEach((popup) => {
+  popup.addEventListener("click", (evt) => {
+    if (evt.target === popup) {
+      closePopup(popup);
+    }
+  });
+});
+
+// Обработчик события клика на кнопку 'Редактировать профиль'
+editButton.addEventListener("click", function () {
+  openPopup(profilePopup);
+  userName.value = profileNameElement.textContent;
+  userPost.value = profileDescriptionElement.textContent;
+});
+
+// Обработчик события клика на кнопку 'Добавить' (открывает попап для добавления карточки)
+addButton.addEventListener("click", function () {
+  openPopup(addPopup);
+});
+
+// Добавляем обработчики событий для кнопок закрытия внутри попапов
+document.querySelectorAll(".popup__close-button").forEach((button) => {
+  const buttonsPopup = button.closest(".popup");
+  button.addEventListener("click", () => closePopup(buttonsPopup));
+});
+
+// Добавляем обработчик события отправки формы редактирования профиля
+profilePopupForm.addEventListener("submit", handleProfileFormSubmit);
+
+// Функция для создания карточки из шаблона
+
+initialCards.forEach(addCard);
+
 // Добавляем обработчик события отправки формы добавления карточки
-addPopup.addEventListener("submit", createCard);
+addPopup.addEventListener("submit", createAndAddCard);
