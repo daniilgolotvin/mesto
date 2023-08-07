@@ -26,6 +26,7 @@ function openPopup(popup) {
 
 // Функция для закрытия попапа
 function closePopup(popup) {
+  disableButton(editSubmitButton, "popup__save-button_inactive");
   popup.classList.remove("popup_open");
   document.removeEventListener("keydown", handleEscPress);
 }
@@ -102,8 +103,9 @@ function createAndAddCard(evt) {
     link: addLink.value,
   };
   addCard(newCard);
-  evt.target.reset();
   closePopup(addPopup);
+  evt.target.reset();
+  disableButton(addButton, config.inactiveButtonClass);
 }
 
 // Функция для добавления карточки на страницу
