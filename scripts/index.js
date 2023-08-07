@@ -10,6 +10,7 @@ const userName = document.querySelector("#user-name");
 const profileDescriptionElement = document.querySelector(
   "#profile-description"
 );
+const editSubmitButton = document.querySelector("#editSubmitButton");
 const userPost = document.querySelector("#user-post");
 const profilePopupForm = profilePopup.querySelector(".popup__form");
 const templateElement = document.querySelector(".elements__template").content;
