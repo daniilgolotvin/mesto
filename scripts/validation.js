@@ -1,20 +1,28 @@
 // Функция для отображения ошибки ввода
-const showInputError = (formElement, inputElement, config) => {
+const showInputError = (
+  formElement,
+  inputElement,
+  { inputErrorType, inputErrorTypeClass, errorClassActive }
+) => {
   const errorElement = formElement.querySelector(
-    `${config.inputErrorType}${inputElement.id}`
+    `${inputErrorType}${inputElement.id}`
   );
-  inputElement.classList.add(config.inputErrorTypeClass);
+  inputElement.classList.add(inputErrorTypeClass);
   errorElement.textContent = inputElement.validationMessage;
-  errorElement.classList.add(config.errorClassActive);
+  errorElement.classList.add(errorClassActive);
 };
 
 // Функция для скрытия ошибки ввода
-const hideInputError = (formElement, inputElement, config) => {
+const hideInputError = (
+  formElement,
+  inputElement,
+  { inputErrorType, inputErrorTypeClass, errorClassActive }
+) => {
   const errorElement = formElement.querySelector(
-    `${config.inputErrorType}${inputElement.id}`
+    `${inputErrorType}${inputElement.id}`
   );
-  inputElement.classList.remove(config.inputErrorTypeClass);
-  errorElement.classList.remove(config.errorClassActive);
+  inputElement.classList.remove(inputErrorTypeClass);
+  errorElement.classList.remove(errorClassActive);
   errorElement.textContent = "";
 };
 

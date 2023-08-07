@@ -97,7 +97,7 @@ function createPlace(element) {
 }
 
 // Функция для создания новой карточки и добавления её на страницу
-function createAndAddCard(evt) {
+function handleAddFormSubmit(evt) {
   evt.preventDefault();
   const newCard = {
     name: addName.value.trim(),
@@ -150,4 +150,4 @@ profilePopupForm.addEventListener("submit", handleProfileFormSubmit);
 initialCards.forEach(addCard);
 
 // Добавляем обработчик события отправки формы добавления карточки
-addPopup.addEventListener("submit", createAndAddCard);
+addPopup.addEventListener("submit", handleAddFormSubmit);
