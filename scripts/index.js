@@ -106,7 +106,6 @@ function handleAddFormSubmit(evt) {
   addCard(newCard);
   closePopup(addPopup);
   evt.target.reset();
-  disableButton(addButton, config.inactiveButtonClass);
 }
 
 // Функция для добавления карточки на страницу
