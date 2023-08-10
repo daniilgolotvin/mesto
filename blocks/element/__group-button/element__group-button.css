@@ -12,9 +12,3 @@
 .element__group-button:hover {
   opacity: 0.5;
 }
-
-@media (max-width: 640px) {
-  .element__group-button {
-    max-width: 22px;
-  }
-}
