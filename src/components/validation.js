@@ -1,5 +1,5 @@
 // Функция для отображения ошибки ввода
-const showInputError = (
+export const showInputError = (
   formElement,
   inputElement,
   { inputErrorType, inputErrorTypeClass, errorClassActive }
@@ -13,7 +13,7 @@ const showInputError = (
 };
 
 // Функция для скрытия ошибки ввода
-const hideInputError = (
+export const hideInputError = (
   formElement,
   inputElement,
   { inputErrorType, inputErrorTypeClass, errorClassActive }
@@ -27,7 +27,7 @@ const hideInputError = (
 };
 
 // Функция для проверки валидности введенных данных в поле ввода
-const checkInputValidity = (formElement, inputElement, config) => {
+export const checkInputValidity = (formElement, inputElement, config) => {
   if (!inputElement.validity.valid) {
     showInputError(formElement, inputElement, config);
   } else {
@@ -35,7 +35,7 @@ const checkInputValidity = (formElement, inputElement, config) => {
   }
 };
 
-const setEventListeners = (formElement, config) => {
+export const setEventListeners = (formElement, config) => {
   const inputList = Array.from(
     formElement.querySelectorAll(config.inputSelector)
   );
@@ -60,7 +60,7 @@ const setEventListeners = (formElement, config) => {
 };
 
 // Функция для включения валидации для всех указанных форм на странице
-const enableValidation = (config) => {
+export const enableValidation = (config) => {
   const forms = document.forms;
   const formList = Array.from(forms);
 
@@ -74,26 +74,30 @@ const enableValidation = (config) => {
 };
 
 // Функция для проверки наличия невалидных полей в списке
-function hasInvalidInput(inputList) {
+export function hasInvalidInput(inputList) {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 }
 
 // Функция для отключения кнопки
-function disableButton(buttonElement, inactiveButtonClass) {
+export function disableButton(buttonElement, inactiveButtonClass) {
   buttonElement.classList.add(inactiveButtonClass);
   buttonElement.disabled = true;
 }
 
 // Функция для включения кнопки
-function enableButton(buttonElement, inactiveButtonClass) {
+export function enableButton(buttonElement, inactiveButtonClass) {
   buttonElement.classList.remove(inactiveButtonClass);
   buttonElement.disabled = false;
 }
 
 // Функция для переключения состояния кнопки в зависимости от валидности полей ввода
-function toggleButtonState(inputList, buttonElement, inactiveButtonClass) {
+export function toggleButtonState(
+  inputList,
+  buttonElement,
+  inactiveButtonClass
+) {
   disableButton(buttonElement, inactiveButtonClass);
   if (hasInvalidInput(inputList)) {
     disableButton(buttonElement, inactiveButtonClass);
